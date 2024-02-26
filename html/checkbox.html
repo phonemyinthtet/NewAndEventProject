@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Local Storage Sandbox</title>
+	<meta charset="UTF-8" />
+	<script>
+    function onInit() {
+      const isChecked = JSON.parse(localStorage.getItem("isChecked"))
+      document.getElementById("status").checked = isChecked
+        if(isChecked == true){
+           // window.location.assign("https://icon-library.com/icon/flag-icon-png-28.html")
+           //window.location.assign("...
+            window.location.href("/language/ENG");
+        }
+        else{
+//window.location.assign("...")
+                window.location.href("/language/MM")
+        }
+    }
+    function yesno() {
+      let statusEl = document.getElementById("status");
+      localStorage.setItem("isChecked", JSON.stringify(statusEl.checked));
+      const marker = document.getElementById("marker");
+      marker.innerHTML = localStorage.getItem("isChecked");
+    }
+    </script>
+</head>
+<body onLoad="onInit()">
+  <h1 
+    id="marker" 
+    style="text-align: center; padding-bottom:50px;"
+  ></h1>
+  <label class="label-switch switch-primary">
+  <input 
+    type="checkbox" 
+    class="switch switch-bootstrap status" 
+    name="status" 
+    id="status"
+    onclick="yesno()"
+  >
+</body>
+</html>

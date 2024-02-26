@@ -405,7 +405,8 @@ a {
 @media screen and (min-width: 769px) {
  
   .nav__link{
-    font-size: 11px;
+    font-size: 11.5px;
+    font-style: var(--body-font);
   }
   .dropdown:hover > .dropdown__menu {
     display: block;
